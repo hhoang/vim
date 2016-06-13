@@ -8,12 +8,34 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set paste
-:let mapleader=","
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 map <C-n> :NERDTreeToggle<CR>
+inoremap <Nul> <C-x><C-o> 
 
 let g:go_disable_autoinstall = 0
+
+:let mapleader=","
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+map <Leader> <Plug>(easymotion-prefix)
+nmap <Leader>s <Plug>(easymotion-s2)
+map  <Leader>f <Plug>(easymotion-bd-f)
+map <Leader>L <Plug>(easymotion-bd-jk)
+map <Leader>w <Plug>(easymotion-bd-w)
+
+ 
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 
 " Highlight
 let g:go_highlight_functions = 1  
@@ -21,16 +43,4 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1  
 let g:go_highlight_operators = 1  
 let g:go_highlight_build_constraints = 1  
-
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
-" s{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
-
-" Move to line
-map <Leader>L <Plug>(easymotion-bd-jk)
-nmap <Leader>L <Plug>(easymotion-overwin-line)
-
-" Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
+let g:go_fmt_command = "goimports"

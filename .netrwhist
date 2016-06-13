@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/hohoang/.config'
 let g:netrw_dirhist_2='/Users/hohoang/.oh-my-zsh'
 let g:netrw_dirhist_3='/Users/hohoang/go/src/stash.myfamily.int/scm/udsgo/ups.git'
+let g:netrw_dirhist_4='/Users/hohoang/DEV/dnsCheck'
+let g:netrw_dirhist_5='/Users/hohoang/go/src/stash.myfamily.int/scm/inf/barbossa.git'
